@@ -13,6 +13,8 @@ sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /smb/prod.key 
 ```bash
 vi /usr/lib/systemd/system/nginx.service
 vi /etc/nginx/nginx.conf
+vi /etc/nginx/conf.d/upstream.conf
+vi /etc/nginx/conf.d/proxy.conf
 ```
 # open port
 ```bash
@@ -25,4 +27,5 @@ firewall-cmd --reload
 systemctl daemon-reload
 systemctl restart nginx.service
 systemctl enable nginx.service
+systemctl status nginx
 ```
